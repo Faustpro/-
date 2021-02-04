@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+    int a, b; //求a，b的最大公约数与最小公倍数
+    int m, n;
+    int i;
+    int gcm = 1;//公约数
+    int lcm; //公倍数
+    scanf("%d%d", &a, &b);
+    m = a;
+    n = b;//不破坏a， b的值
+    if(m < n) //确保m的值最大
+    {
+      m = b;
+      n = a;
+    }
+    for(i = 2; i < n; i++)
+    {
+      if(m % i == 0 && n % i == 0)
+      {
+        m /= i;
+        n /= i;
+        gcm *= i;
+        i = 2; //将i初始化
+      }
+    }
+    lcm = gcm * m * n;
+    printf("最大公约数：%d\n最小公倍数：%d\n", gcm, lcm);
+    return 0;
+}
