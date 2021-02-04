@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char str[10] = {'A'}
+    char *find = strchr(str, 'A'); //在str中寻找字符A
+    if(find)
+    {
+      *find = 'B';
+    }
+    puts(str);
+    free(find);
+    find = NULL; //指针使用完后释放
+    return 0;
+}
