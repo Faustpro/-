@@ -1,0 +1,30 @@
+int gcm(int, int) //函数声明
+
+#include <stdio.h>
+int main()
+{
+  int a, b;
+  int gcm;
+  scanf("%d%d", &a, &b);
+  gcm = gcm(a, b);
+  lcm = gcm / a * b
+  printf("最大公约数：%d\n最小公倍数：%d\n", gcm, lcm);
+
+
+
+  return 0;
+}
+
+int gcm(int a, int b)
+{
+  if(a % b == 0)
+  {
+    return b;
+  }
+  else
+  {
+    return gcm(b, a % b);
+  }
+
+  
+}
