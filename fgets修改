@@ -1,0 +1,12 @@
+int Myfgets(char[], int);
+#include <stdio.h>
+int Myfgets(char str[], int count)
+{
+    fegts(str, count, stdin);
+    char *find = strchr(str, '\n');
+    if(find)
+    {
+      *find = '\0';
+    }
+    return 0;
+}
