@@ -1,0 +1,43 @@
+//有一分数序列： 2/1 3/2 5/3 8/5 13/8 21/13...... 求出这个数列的前N项之和，保留两位小数。
+//普通方法
+#include<stdio.h>
+/*int main()
+{
+    int i;
+    double Qf = 2.0, Qm = 1.0;
+    double sum = 0;
+    int N;
+    scanf("%d", &N);
+    for(i = 0;i < N;i++)
+    {
+        sum += Qf /  Qm;
+        Qf = Qm + Qf;
+        Qm = Qf - Qm;
+    }
+    printf("%.2lf", sum);
+    return 0;
+}*/
+
+//递归
+/*double Sn(int N,int count,double Qm, double Qf)
+{
+    if(count >= N)
+    {
+        return 0;
+    }
+    else
+    {
+        return Qf / Qm + Sn(N,++count,Qf, Qm+Qf);//若为count++则会导致先将count传输给函数再自增1，最后count值不变
+    }
+}
+
+int main()
+{
+    int N;
+    double sum = 0;
+    scanf("%d", &N);
+    sum = Sn(N,0,1.0,2.0);
+    printf("%.2lf", sum);
+    return 0;
+}
+*/
