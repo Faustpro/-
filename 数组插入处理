@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main()
+{
+  int i = 0;
+  int n = 0; //插入数字
+  int k = 0; //输入数存放下标
+  int a[10];
+  int b[10]; //定义两个数组，一个用于存放原始数据，另一个存放输出
+  for(i = 0; i < 9; i++)
+  {
+    scanf("%d", &a[i]);
+  }
+  scanf("%d", &n);
+  for(i = 0; i < 9; i++)
+  {
+      if(a[i] < n)
+      {
+        b[i] = a[i];  //因a中数据有序，因此在找到第一个比n大的数之前，按原有顺序将a中的数复制到b中
+        k++;          //记录下标
+      }
+      else
+      {
+        b[i + 1] = a[i]; //出现第一个比n大的数，将其存放到b[i+1],b[i]留给n
+        break;
+      }
+  
+  }
+  b[k] = n;
+  for(i = 0; i < 10; i++)
+  {
+    printf("%d\n", b[i]);
+  }
+
+
+  return 0;
+}
